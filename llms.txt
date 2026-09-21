@@ -1,0 +1,58 @@
+# Star Laboratories (Pvt) Ltd
+
+> WHO-GMP certified manufacturer of human and veterinary pharmaceutical products in Lahore, Pakistan. Founded 1960. Exporting to 30+ countries. 482 registered products.
+
+Star Laboratories manufactures human medicines (antibiotics, cardiovascular, gastrointestinal, CNS, respiratory, anti-diabetic, nutritional) and veterinary medicines for livestock and poultry, across injectable, oral solid, oral liquid, topical, drench, bolus, powder and aerosol dosage forms. The company also offers contract / third-party / toll manufacturing.
+
+## Key Facts
+- Legal name: Star Laboratories (Private) Limited
+- Founded: 1960
+- Address: 23 K.M. Multan Road, Lahore 53800, Punjab, Pakistan
+- Phone: +92-42-37511331, +92-309-2554000
+- Email: starlabshr@starlabs.com.pk
+- Certifications: WHO-GMP; licensed by DRAP (Drug Regulatory Authority of Pakistan); ISO 9001:2015, ISO 14001:2015, ISO 45001:2018
+- Awards: PPMA PESA Top Exporter Award 2023, PPMA PESA Top Exporter Award 2024
+- Products: 482 (human + veterinary)
+
+## Main Pages
+- [Products](https://starlabs.com.pk/products/): full human & veterinary catalogue
+- [Human Products](https://starlabs.com.pk/products/human/)
+- [Veterinary Products](https://starlabs.com.pk/products/veterinary/)
+- [Contract Manufacturing](https://starlabs.com.pk/contract-manufacturing/): WHO-GMP contract / toll / third-party manufacturing
+- [Quality & Certifications](https://starlabs.com.pk/quality/)
+- [Exports](https://starlabs.com.pk/exports/)
+- [About](https://starlabs.com.pk/about/)
+- [Contact](https://starlabs.com.pk/contact/)
+- [Insights](https://starlabs.com.pk/blog/)
+
+## Knowledge Hub & Technical Guides
+- [Contract Manufacturing in Pakistan: DRAP Licensing & WHO-GMP Guide](https://starlabs.com.pk/blog/contract-manufacturing-pharmaceuticals-pakistan-drap-guide/)
+- [Oral Solid Dosage vs Liquid Formulations: Technical Comparison](https://starlabs.com.pk/blog/oral-solid-dosage-vs-liquid-formulations-manufacturing/)
+- [Pharmaceutical Quality Assurance & QC: WHO-GMP Standards](https://starlabs.com.pk/blog/pharmaceutical-quality-assurance-qc-who-gmp-standards/)
+- [Veterinary Medicine Manufacturing for Livestock & Poultry in Pakistan](https://starlabs.com.pk/blog/veterinary-medicine-manufacturing-livestock-poultry-pakistan/)
+- [Bovine Mastitis Prevention & Treatment: Intramammary Infusions](https://starlabs.com.pk/blog/bovine-mastitis-prevention-treatment-intramammary-infusions/)
+- [Antibiotic Stewardship & Safe Dosage Guide: Pediatric & Adult](https://starlabs.com.pk/blog/antibiotic-stewardship-safe-pediatric-adult-dosage/)
+- [Pharmaceutical Regulatory Dossier: CTD & ACTD for Export Markets](https://starlabs.com.pk/blog/pharmaceutical-regulatory-dossier-ctd-actd-export-markets/)
+- [Poultry Biosecurity & Water-Soluble Powder Therapeutics Guide](https://starlabs.com.pk/blog/poultry-biosecurity-water-soluble-powder-therapeutics/)
+
+## Product Categories
+- [Veterinary / Semi Solid](https://starlabs.com.pk/products/veterinary/semi-solid/): 3 products
+- [Human / Injectable](https://starlabs.com.pk/products/human/injectable/): 66 products
+- [Human / Oral Liquid](https://starlabs.com.pk/products/human/oral-liquid/): 26 products
+- [Human / Oral Solids](https://starlabs.com.pk/products/human/oral-solids/): 170 products
+- [Human / Topical](https://starlabs.com.pk/products/human/topical/): 4 products
+- [Veterinary / Aerosol](https://starlabs.com.pk/products/veterinary/aerosol/): 4 products
+- [Veterinary / Injectables](https://starlabs.com.pk/products/veterinary/injectables/): 104 products
+- [Veterinary / Liquid Dosage Form](https://starlabs.com.pk/products/veterinary/liquid-dosage-form/): 45 products
+- [Veterinary / Solid Dosage Form](https://starlabs.com.pk/products/veterinary/solid-dosage-form/): 60 products
+
+## Segmented Sitemaps
+- [Master Sitemap Index](https://starlabs.com.pk/sitemap.xml)
+- [Institutional Pages Sitemap](https://starlabs.com.pk/sitemap-main.xml)
+- [Veterinary Formulations Sitemap](https://starlabs.com.pk/sitemap-products-veterinary.xml)
+- [Human Formulations Sitemap](https://starlabs.com.pk/sitemap-products-human.xml)
+- [Manufacturing Facilities Sitemap](https://starlabs.com.pk/sitemap-manufacturing.xml)
+- [Corporate News & Blog Sitemap](https://starlabs.com.pk/sitemap-news.xml)
+
+## More
+- Full machine-readable product catalogue: [llms-full.txt](https://starlabs.com.pk/llms-full.txt)

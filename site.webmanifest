@@ -1,0 +1,28 @@
+{
+  "name": "Star Laboratories (Pvt) Ltd",
+  "short_name": "Star Labs",
+  "description": "WHO-GMP certified human and veterinary pharmaceutical manufacturer in Lahore, Pakistan since 1962.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#ffffff",
+  "theme_color": "#db0000",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": ["health", "medical", "business"],
+  "icons": [
+    {
+      "src": "/img/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/img/logo/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

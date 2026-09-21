@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap>
+    <loc>https://starlabs.com.pk/sitemap-main.xml</loc>
+    <lastmod>2026-09-18</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://starlabs.com.pk/sitemap-products-veterinary.xml</loc>
+    <lastmod>2026-06-04</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://starlabs.com.pk/sitemap-products-human.xml</loc>
+    <lastmod>2026-09-18</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://starlabs.com.pk/sitemap-manufacturing.xml</loc>
+    <lastmod>2026-09-18</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://starlabs.com.pk/sitemap-news.xml</loc>
+    <lastmod>2026-09-18</lastmod>
+  </sitemap>
+</sitemapindex>

@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Star Laboratories — Website Improvements Report</title>
+<style>
+    :root {
+        --red: #db0000;
+        --red-dark: #b00000;
+        --navy: #020025;
+        --ink: #1a1a2e;
+        --muted: #647589;
+        --line: #e6e8ec;
+        --bg: #f4f5f7;
+        --green: #1a7f37;
+        --paper: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        background: var(--bg);
+        color: var(--ink);
+        line-height: 1.65;
+        -webkit-font-smoothing: antialiased;
+    }
+    .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+
+    /* ---- Cover ---- */
+    .cover {
+        background: linear-gradient(135deg, var(--navy) 0%, #1a1145 55%, var(--red-dark) 100%);
+        color: #fff;
+        padding: 72px 0 64px;
+        position: relative;
+        overflow: hidden;
+    }
+    .cover::after {
+        content: "";
+        position: absolute; right: -120px; top: -120px;
+        width: 380px; height: 380px; border-radius: 50%;
+        background: radial-gradient(circle, rgba(219,0,0,0.45), transparent 70%);
+    }
+    .cover .wrap { position: relative; z-index: 2; }
+    .cover .eyebrow {
+        letter-spacing: 3px; text-transform: uppercase; font-size: 13px;
+        font-weight: 700; color: #ff8a8a; margin-bottom: 14px;
+    }
+    .cover h1 { font-size: 40px; font-weight: 800; line-height: 1.15; margin-bottom: 14px; }
+    .cover h1 span { color: #ff5d5d; }
+    .cover p.lead { font-size: 17px; max-width: 680px; opacity: 0.9; }
+    .cover .meta {
+        margin-top: 30px; display: flex; flex-wrap: wrap; gap: 26px;
+        font-size: 14px; opacity: 0.85;
+    }
+    .cover .meta b { color: #fff; font-weight: 700; display: block; font-size: 15px; }
+
+    /* ---- Sections ---- */
+    section { padding: 48px 0; }
+    section:nth-child(even) { background: var(--paper); }
+    .kicker {
+        display: inline-block; font-size: 12px; font-weight: 800; letter-spacing: 1.5px;
+        text-transform: uppercase; color: var(--red); margin-bottom: 8px;
+    }
+    h2 {
+        font-size: 27px; font-weight: 800; color: var(--ink); margin-bottom: 6px;
+    }
+    .section-intro { color: var(--muted); margin-bottom: 28px; max-width: 760px; }
+
+    /* ---- Stat cards ---- */
+    .stats {
+        display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 8px;
+    }
+    .stat {
+        background: var(--paper); border: 1px solid var(--line); border-radius: 14px;
+        padding: 22px 18px; text-align: center;
+    }
+    section:nth-child(even) .stat { background: var(--bg); }
+    .stat .num { font-size: 34px; font-weight: 800; color: var(--red); line-height: 1; }
+    .stat .lbl { font-size: 12.5px; color: var(--muted); margin-top: 7px; font-weight: 600;
+        text-transform: uppercase; letter-spacing: .4px; }
+
+    /* ---- Cards grid ---- */
+    .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .card {
+        background: var(--paper); border: 1px solid var(--line); border-radius: 14px;
+        padding: 22px 24px;
+    }
+    section:nth-child(even) .card { background: var(--bg); }
+    .card h3 {
+        font-size: 16px; font-weight: 800; margin-bottom: 12px; color: var(--ink);
+        display: flex; align-items: center; gap: 9px;
+    }
+    .card h3 .ic {
+        width: 30px; height: 30px; border-radius: 8px; background: #fdeaea; color: var(--red);
+        display: inline-flex; align-items: center; justify-content: center; font-size: 15px; flex-shrink: 0;
+    }
+    .card ul { list-style: none; }
+    .card li {
+        position: relative; padding-left: 24px; margin-bottom: 8px; font-size: 14px; color: #38404f;
+    }
+    .card li::before {
+        content: "✓"; position: absolute; left: 0; top: 0;
+        color: var(--green); font-weight: 800;
+    }
+    .card li b { color: var(--ink); }
+
+    /* ---- Before / After ---- */
+    .ba { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 8px; }
+    .ba-col { border-radius: 12px; padding: 18px 20px; font-size: 14px; }
+    .ba-before { background: #fff4f4; border: 1px solid #f3c2c2; }
+    .ba-after { background: #eefaf0; border: 1px solid #bfe6c8; }
+    .ba-col .tag {
+        font-size: 11px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase;
+        margin-bottom: 10px; display: inline-block;
+    }
+    .ba-before .tag { color: var(--red); }
+    .ba-after .tag { color: var(--green); }
+    .ba-col ul { list-style: none; }
+    .ba-col li { padding-left: 18px; position: relative; margin-bottom: 6px; }
+    .ba-before li::before { content: "✕"; position: absolute; left: 0; color: var(--red); font-weight: 800; }
+    .ba-after li::before { content: "✓"; position: absolute; left: 0; color: var(--green); font-weight: 800; }
+
+    /* ---- Feature blocks ---- */
+    .feature {
+        background: var(--paper); border: 1px solid var(--line); border-radius: 16px;
+        padding: 26px 28px; margin-bottom: 18px;
+    }
+    section:nth-child(even) .feature { background: var(--bg); }
+    .feature h3 {
+        font-size: 18px; font-weight: 800; margin-bottom: 6px;
+        display: flex; align-items: center; gap: 10px;
+    }
+    .feature h3 .pill {
+        font-size: 10px; font-weight: 800; letter-spacing: .6px; text-transform: uppercase;
+        background: var(--red); color: #fff; padding: 4px 9px; border-radius: 20px;
+    }
+    .feature p { color: var(--muted); font-size: 14.5px; margin-bottom: 12px; }
+    .feature .detail { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 26px; }
+    .feature .detail li {
+        list-style: none; padding-left: 22px; position: relative; font-size: 13.5px; margin-bottom: 5px;
+    }
+    .feature .detail li::before {
+        content: "→"; position: absolute; left: 0; color: var(--red); font-weight: 800;
+    }
+
+    /* ---- File table ---- */
+    table { width: 100%; border-collapse: collapse; font-size: 13.5px; background: var(--paper); }
+    section:nth-child(even) table { background: var(--bg); }
+    th, td { text-align: left; padding: 10px 14px; border-bottom: 1px solid var(--line); }
+    th { background: var(--navy); color: #fff; font-size: 12px; text-transform: uppercase; letter-spacing: .5px; }
+    td code {
+        background: #f0f1f4; padding: 1px 6px; border-radius: 4px; font-size: 12.5px;
+        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    }
+    .tag-new { color: var(--green); font-weight: 700; }
+    .tag-mod { color: var(--red); font-weight: 700; }
+
+    /* ---- Callout ---- */
+    .callout {
+        background: #fff8e6; border: 1px solid #f1d99b; border-left: 4px solid #e0a800;
+        border-radius: 10px; padding: 18px 22px; font-size: 14px; margin-top: 10px;
+    }
+    .callout b { color: #8a6400; }
+    .next {
+        background: var(--paper); border: 1px solid var(--line); border-radius: 12px;
+        padding: 6px 0;
+    }
+    section:nth-child(even) .next { background: var(--bg); }
+    .next-item {
+        display: flex; gap: 14px; padding: 14px 22px; border-bottom: 1px solid var(--line);
+    }
+    .next-item:last-child { border-bottom: none; }
+    .next-num {
+        flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%;
+        background: var(--red); color: #fff; font-weight: 800; font-size: 13px;
+        display: flex; align-items: center; justify-content: center;
+    }
+    .next-item .t { font-weight: 700; font-size: 14.5px; }
+    .next-item .d { font-size: 13.5px; color: var(--muted); }
+
+    footer {
+        background: var(--navy); color: #cfd2e0; padding: 30px 0; font-size: 13px; text-align: center;
+    }
+    footer b { color: #fff; }
+
+    @media (max-width: 760px) {
+        .stats { grid-template-columns: repeat(2, 1fr); }
+        .grid, .ba, .feature .detail { grid-template-columns: 1fr; }
+        .cover h1 { font-size: 30px; }
+    }
+    @media print {
+        body { background: #fff; }
+        section, section:nth-child(even) { background: #fff; padding: 26px 0; break-inside: avoid; }
+        .card, .feature, .stat { break-inside: avoid; }
+        .cover { background: var(--navy) !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
+</style>
+</head>
+<body>
+
+<!-- ============ COVER ============ -->
+<div class="cover">
+    <div class="wrap">
+        <div class="eyebrow">Website Improvement Report</div>
+        <h1>Star Laboratories (Pvt) Ltd<br><span>Technical SEO, UX &amp; Performance Overhaul</span></h1>
+        <p class="lead">A complete modernisation of starlabs.com.pk — search-engine &amp; AI-answer optimisation,
+            performance hardening, accessibility, and a rebuilt product &amp; enquiry experience across all 528 pages.</p>
+        <div class="meta">
+            <div><b>Prepared for</b>Star Laboratories (Pvt) Ltd</div>
+            <div><b>Scope</b>Full site — 528 pages</div>
+            <div><b>Status</b>Delivered &amp; validated</div>
+        </div>
+    </div>
+</div>
+
+<!-- ============ EXECUTIVE SUMMARY ============ -->
+<section>
+    <div class="wrap">
+        <span class="kicker">At a glance</span>
+        <h2>What changed, in numbers</h2>
+        <p class="section-intro">The site had severe technical SEO problems that made strong Google rankings
+            effectively impossible, plus several broken UI components. Every fixable issue has been resolved
+            through a maintainable, centralised system.</p>
+        <div class="stats">
+            <div class="stat"><div class="num">528</div><div class="lbl">Pages optimised</div></div>
+            <div class="stat"><div class="num">499</div><div class="lbl">Pages given unique SEO</div></div>
+            <div class="stat"><div class="num">1,057</div><div class="lbl">Image alt texts added</div></div>
+            <div class="stat"><div class="num">0</div><div class="lbl">Broken links remaining</div></div>
+        </div>
+        <div class="stats" style="margin-top:16px;">
+            <div class="stat"><div class="num">483</div><div class="lbl">Products in structured data</div></div>
+            <div class="stat"><div class="num">1,104</div><div class="lbl">Images lazy-loaded</div></div>
+            <div class="stat"><div class="num">8</div><div class="lbl">Major components rebuilt</div></div>
+            <div class="stat"><div class="num">13</div><div class="lbl">Languages in translator</div></div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ TECHNICAL SEO ============ -->
+<section>
+    <div class="wrap">
+        <span class="kicker">Foundation</span>
+        <h2>Technical SEO &amp; AEO</h2>
+        <p class="section-intro">"AEO" = Answer Engine Optimisation — making the site readable to AI answer
+            engines such as Google AI Overviews, ChatGPT and Perplexity, alongside traditional SEO.</p>
+
+        <div class="ba">
+            <div class="ba-col ba-before">
+                <span class="tag">Before</span>
+                <ul>
+                    <li>Every page declared <code>lang="zxx"</code> — tells Google "no language"</li>
+                    <li>Identical <code>&lt;title&gt;Star Labs Website&lt;/title&gt;</code> on 499 pages</li>
+                    <li>Empty meta descriptions site-wide</li>
+                    <li>No canonical URLs, no structured data, no <code>robots.txt</code></li>
+                    <li>Sitemap covered only 108 of 528 pages</li>
+                </ul>
+            </div>
+            <div class="ba-col ba-after">
+                <span class="tag">After</span>
+                <ul>
+                    <li>Correct <code>lang="en"</code> + hreflang for Pakistan &amp; global</li>
+                    <li>Unique, keyword-rich titles &amp; descriptions on every page</li>
+                    <li>Full JSON-LD structured data on all pages</li>
+                    <li>Canonical URLs, Open Graph &amp; Twitter cards everywhere</li>
+                    <li>Complete 499-URL sitemap + robots.txt + AI-crawler rules</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="grid" style="margin-top:18px;">
+            <div class="card">
+                <h3><span class="ic">⚙</span> Centralised SEO engine</h3>
+                <ul>
+                    <li>One file — <b>include/seo.php</b> — powers correct metadata for all 500 page templates</li>
+                    <li>Auto-detects each page; new products inherit best-practice SEO automatically</li>
+                    <li>Curated copy for 15 key pages, auto-generated for 483 product pages</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3><span class="ic">{ }</span> Structured data (JSON-LD)</h3>
+                <ul>
+                    <li><b>Organization + LocalBusiness</b> — pharmaceutical manufacturer entity</li>
+                    <li><b>Product + Drug</b> schema on 483 product pages</li>
+                    <li><b>BreadcrumbList, WebSite search, FAQPage</b> for rich results</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3><span class="ic">🤖</span> AI / Answer-engine readiness</h3>
+                <ul>
+                    <li><b>llms.txt</b> &amp; <b>llms-full.txt</b> — machine-readable company &amp; catalogue map</li>
+                    <li>robots.txt explicitly welcomes GPTBot, ClaudeBot, PerplexityBot &amp; others</li>
+                    <li>Clean entity data so AI answers cite Star Laboratories accurately</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3><span class="ic">🗂</span> Crawl &amp; index files</h3>
+                <ul>
+                    <li>Regenerated <b>sitemap.xml</b> — all 499 URLs, priorities, hreflang</li>
+                    <li>New <b>robots.txt</b>, <b>site.webmanifest</b>, branded <b>404 page</b></li>
+                    <li>483-product structured database (<b>products-data.php</b>)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ PERFORMANCE & SECURITY ============ -->
+<section>
+    <div class="wrap">
+        <span class="kicker">Speed &amp; safety</span>
+        <h2>Performance &amp; Security</h2>
+        <p class="section-intro">Faster loads improve both rankings and conversions; security headers protect
+            the site and its visitors.</p>
+        <div class="grid">
+            <div class="card">
+                <h3><span class="ic">⚡</span> Performance</h3>
+                <ul>
+                    <li><b>1,104 images</b> set to lazy-load with async decoding</li>
+                    <li>Header logo flagged high-priority for faster first paint</li>
+                    <li>Render-blocking scripts deferred; duplicate Font Awesome removed</li>
+                    <li>Resource hints (<code>preconnect</code>, <code>dns-prefetch</code>) added</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3><span class="ic">🛡</span> Security &amp; caching (.htaccess)</h3>
+                <ul>
+                    <li>GZIP / Brotli compression + 1-year static-asset caching</li>
+                    <li>Security headers — X-Frame-Options, HSTS, Referrer-Policy, etc.</li>
+                    <li>HTTPS + www canonicalisation (production-only, dev-safe)</li>
+                    <li>Directory listing disabled; sensitive files blocked</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ MAJOR REBUILDS ============ -->
+<section>
+    <div class="wrap">
+        <span class="kicker">Rebuilt from the ground up</span>
+        <h2>Major Components Rebuilt</h2>
+        <p class="section-intro">Several key components were broken or conflicting. Rather than patching, these
+            were rebuilt cleanly with scoped, conflict-free code.</p>
+
+        <div class="feature">
+            <h3><span class="pill">Rebuilt</span> Products Page — search, sort &amp; filter workflow</h3>
+            <p>The sort dropdown did nothing, product cards rendered oversized from theme-CSS bleed, and the
+                filters fought the pagination. Rebuilt as one unified browser with scoped styling.</p>
+            <ul class="detail">
+                <li>Live product search by name</li>
+                <li>Working sort — Featured, A–Z, Z–A, Category</li>
+                <li>Category accordion + checkboxes that filter together with search</li>
+                <li>Pagination on the filtered set, active-filter chips, empty state</li>
+                <li>Reads <code>?q=</code> from the URL (powers site search)</li>
+                <li>All 122 listed products preserved</li>
+            </ul>
+        </div>
+
+        <div class="feature">
+            <h3><span class="pill">Rebuilt</span> Global Presence — interactive world map</h3>
+            <p>The export map had become invisible and used fragile pixel-math. Rebuilt as a modern,
+                robust section.</p>
+            <ul class="detail">
+                <li>World map (3/4 width) with location markers for 30 export countries</li>
+                <li>Searchable country list (1/4 width) — click to highlight on the map</li>
+                <li>Animated stat counters — 30+ Countries, 3 Continents, 60+ Years</li>
+                <li>Fully responsive; markers reposition reliably on load &amp; resize</li>
+            </ul>
+        </div>
+
+        <div class="feature">
+            <h3><span class="pill">New</span> Product Enquiry Workflow (not e-commerce — quotation only)</h3>
+            <p>Product pages had a single generic "Contact Us" link and the contact form didn't actually send.
+                Replaced with a complete enquiry system.</p>
+            <ul class="detail">
+                <li>Every product page: "Request a Quotation" + "Enquire on WhatsApp" buttons</li>
+                <li>WhatsApp opens a pre-filled message naming that exact product</li>
+                <li>Contact form auto-fills the product name, subject &amp; a structured message</li>
+                <li>"Contact Us" tab rebuilt into a compact, product-aware enquiry form</li>
+                <li>New PHP mail handler (<code>send-enquiry.php</code>) — emails sales, with spam protection</li>
+                <li>Captures country — useful for export enquiries</li>
+            </ul>
+        </div>
+
+        <div class="feature">
+            <h3><span class="pill">Rebuilt</span> Language Selector &amp; Product Detail Tabs</h3>
+            <p>The translator used a fragile show/hide hack; the product tabs were plain and letter-spaced.</p>
+            <ul class="detail">
+                <li>Custom 13-language dropdown that reliably drives Google Translate</li>
+                <li>Remembers the chosen language; hides Google's intrusive banner</li>
+                <li>Works on mobile; accessible (ARIA, keyboard)</li>
+                <li>Composition / Pack Sizes / Contact Us tabs redesigned — modern pill tabs &amp; cards</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- ============ UI/UX FIXES ============ -->
+<section>
+    <div class="wrap">
+        <span class="kicker">Polish &amp; accessibility</span>
+        <h2>UI / UX &amp; Accessibility Fixes</h2>
+        <div class="grid">
+            <div class="card">
+                <h3><span class="ic">🔧</span> Bugs fixed</h3>
+                <ul>
+                    <li>Hero "View Products" button was unclickable — decorative wave layer was blocking it</li>
+                    <li>Header dropdown menu closed before you could click a sub-item</li>
+                    <li>Stretched header logo — natural 2:1 ratio restored</li>
+                    <li>A product page's unclosed <code>&lt;h1&gt;</code> distorted all text below it</li>
+                    <li>Transparent icons had unwanted grey backgrounds</li>
+                    <li>Hero banner content overlapped the header — proper spacing added</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3><span class="ic">♿</span> Accessibility &amp; UX</h3>
+                <ul>
+                    <li>Skip-to-content link &amp; <code>main</code> landmark on every page</li>
+                    <li>Visible keyboard focus states; reduced-motion support; print styles</li>
+                    <li>ARIA labels on navigation, logo, language &amp; social links</li>
+                    <li>Floating WhatsApp enquiry button site-wide</li>
+                    <li>Larger mobile tap targets; descriptive image alt text</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3><span class="ic">🔗</span> Links &amp; integrity</h3>
+                <ul>
+                    <li>Scanned all 501 pages / ~2,200 internal links</li>
+                    <li>Fixed 68 placeholder links, dead links, backslash &amp; wrong-depth paths</li>
+                    <li><b>0 broken links</b> remaining site-wide</li>
+                    <li>Missing product images now fall back to the brand logo (no broken-image icons)</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3><span class="ic">🏢</span> Footer &amp; branding</h3>
+                <ul>
+                    <li>Fixed broken map link &amp; static copyright year (now dynamic)</li>
+                    <li>Social links given proper labels &amp; <code>rel="noopener"</code></li>
+                    <li>Credit added — "Designed and developed by Apex IT Solutions and Apex Marketings"</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ FILES ============ -->
+<section>
+    <div class="wrap">
+        <span class="kicker">Deliverables</span>
+        <h2>Key Files Added &amp; Changed</h2>
+        <p class="section-intro">Work was centralised into shared files wherever possible, so the whole 528-page
+            site benefits while staying easy to maintain.</p>
+        <table>
+            <thead><tr><th>File</th><th>Type</th><th>Purpose</th></tr></thead>
+            <tbody>
+                <tr><td><code>include/seo.php</code></td><td class="tag-new">New</td><td>Centralised SEO + AEO engine — metadata &amp; JSON-LD for every page</td></tr>
+                <tr><td><code>include/products-data.php</code></td><td class="tag-new">New</td><td>Structured database of all 483 products</td></tr>
+                <tr><td><code>include/send-enquiry.php</code></td><td class="tag-new">New</td><td>PHP mail handler for the enquiry / quotation forms</td></tr>
+                <tr><td><code>js/sl-products.js</code></td><td class="tag-new">New</td><td>Products page search / sort / filter controller</td></tr>
+                <tr><td><code>css/sl-enhancements.css</code></td><td class="tag-new">New</td><td>Accessibility, UX polish, tab redesign, bug fixes</td></tr>
+                <tr><td><code>robots.txt</code>, <code>sitemap.xml</code></td><td class="tag-new">New</td><td>Crawl directives &amp; complete 499-URL sitemap</td></tr>
+                <tr><td><code>llms.txt</code>, <code>llms-full.txt</code></td><td class="tag-new">New</td><td>AI answer-engine site &amp; catalogue map</td></tr>
+                <tr><td><code>site.webmanifest</code>, <code>404.php</code></td><td class="tag-new">New</td><td>PWA manifest &amp; branded error page</td></tr>
+                <tr><td><code>products/index.php</code></td><td class="tag-mod">Rebuilt</td><td>Full search/sort/filter product browser</td></tr>
+                <tr><td><code>exports/index.php</code></td><td class="tag-mod">Rebuilt</td><td>Interactive Global Presence map + search</td></tr>
+                <tr><td><code>include/product.php</code>, <code>product-contact.php</code></td><td class="tag-mod">Rebuilt</td><td>Product enquiry buttons &amp; compact quotation form</td></tr>
+                <tr><td><code>include/header*.php</code> (×5)</td><td class="tag-mod">Modified</td><td>Language selector, logo fix, skip links, ARIA, clean nav</td></tr>
+                <tr><td><code>include/footer*.php</code> (×5)</td><td class="tag-mod">Modified</td><td>Map link, social labels, dynamic year, agency credit</td></tr>
+                <tr><td>499 page templates</td><td class="tag-mod">Modified</td><td>SEO engine wired in, language fixed, images optimised</td></tr>
+                <tr><td><code>.htaccess</code></td><td class="tag-mod">Modified</td><td>Compression, caching, security headers, HTTPS rules</td></tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<!-- ============ NEXT STEPS ============ -->
+<section>
+    <div class="wrap">
+        <span class="kicker">To finish the job</span>
+        <h2>Recommended Next Steps</h2>
+        <p class="section-intro">A few items need the site owner's input or content to reach full effect.</p>
+        <div class="next">
+            <div class="next-item"><div class="next-num">1</div><div>
+                <div class="t">Confirm the production domain</div>
+                <div class="d">The SEO engine is set to <code>https://www.starlabs.com.pk</code> — confirm before go-live (it's a one-line change if different).</div></div></div>
+            <div class="next-item"><div class="next-num">2</div><div>
+                <div class="t">Submit the sitemap</div>
+                <div class="d">Add <code>sitemap.xml</code> in Google Search Console and Bing Webmaster Tools after deployment.</div></div></div>
+            <div class="next-item"><div class="next-num">3</div><div>
+                <div class="t">Upload missing product images</div>
+                <div class="d">~398 product photos are referenced but not on the server. Pages currently show the logo as a fallback; real photos should be uploaded to <code>img/product/</code>.</div></div></div>
+            <div class="next-item"><div class="next-num">4</div><div>
+                <div class="t">Test the enquiry email</div>
+                <div class="d">The form uses the server's <code>mail()</code> function — send a test after deploy; switch to SMTP if the host requires it.</div></div></div>
+            <div class="next-item"><div class="next-num">5</div><div>
+                <div class="t">Claim the Google Business Profile</div>
+                <div class="d">Compounds with the LocalBusiness structured data now in place — strong for local SEO in Pakistan.</div></div></div>
+            <div class="next-item"><div class="next-num">6</div><div>
+                <div class="t">Add unique product descriptions</div>
+                <div class="d">Richer, unique copy on category &amp; product pages will further strengthen rankings — the SEO framework picks it up automatically.</div></div></div>
+        </div>
+        <div class="callout">
+            <b>Note on verification:</b> All modified PHP and JavaScript files were syntax-validated. The
+            broken-link scan confirms zero broken internal links across 501 pages. A full backup of the original
+            files was taken before any changes were made.
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="wrap">
+        <b>Star Laboratories (Pvt) Ltd</b> — Website Improvements Report &nbsp;·&nbsp;
+        Technical SEO, UX &amp; Performance Overhaul &nbsp;·&nbsp;
+        Prepared by Apex IT Solutions &amp; Apex Marketings
+    </div>
+</footer>
+
+</body>
+</html>

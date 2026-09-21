@@ -1,0 +1,16 @@
+# Backup archives
+starlabs.zip
+*.tar
+*.gz
+*.rar
+
+# Host & server temporary files
+.ftpquota
+*.log
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE & Editor files
+.vscode/
+.idea/

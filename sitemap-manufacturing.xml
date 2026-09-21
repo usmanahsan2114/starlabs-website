@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://starlabs.com.pk/contract-manufacturing/</loc>
+    <lastmod>2026-06-04</lastmod>
+    <changefreq>quarterly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://starlabs.com.pk/manufacturing/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <changefreq>quarterly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://starlabs.com.pk/manufacturing/production/</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>quarterly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://starlabs.com.pk/manufacturing/quality-control-and-assurance/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <changefreq>quarterly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://starlabs.com.pk/quality/</loc>
+    <lastmod>2026-09-18</lastmod>
+    <changefreq>quarterly</changefreq>
+    <priority>0.75</priority>
+  </url>
+</urlset>
