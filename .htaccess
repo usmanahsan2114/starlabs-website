@@ -48,6 +48,10 @@
     RewriteCond %{HTTP_ACCEPT} image/webp
     RewriteCond %{REQUEST_FILENAME}\.webp -f
     RewriteRule ^(.+)\.(jpe?g|png)$ $1.$2.webp [T=image/webp,E=webp:1,L]
+
+    # Fallback for missing product images: serve og-default.jpg so requests never 404
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^(.*)img/product/.*\.(jpe?g|png)$ $1img/seo/og-default.jpg [L,NC]
 </IfModule>
 
 # WebP negotiation: vary on Accept + correct MIME type

@@ -211,7 +211,7 @@
                                 <div class="image-overlay"></div>
                             </div>
                             <div class="team-member-info mt-35 mb-25">
-                                <h3><a href="#">Muhammad Asrar Hussain Malik </a></h3>
+                                <h3>Muhammad Asrar Hussain Malik</h3>
                                 <h6 class="f-500 text-up-case letter-spacing pink-color">Chief Executive Officer</h6>
                                 <p class="just-text">Muhammad Asrar Hussain Malik brings over decades of visionary leadership to STAR Labs, steering the company toward unprecedented growth and global recognition. As CEO, his forward-thinking approach has not only expanded STAR Labs’ footprint across 30+ countries but has also cemented its status as a trailblazer in both veterinary and human healthcare industries. His strategic insight, combined with a passion for innovation, has driven the company’s transformation into a global leader, known for its high-quality products and groundbreaking medical solutions.
 <br>Under his leadership, STAR Labs has grown from a trusted national name into a prominent international player, with a keen focus on research and development that pushes the boundaries of healthcare technology. Muhammad Asrar Hussain Malik champions a culture of agility and resilience, ensuring that STAR Labs is always ready to meet the changing needs of the industry. His ability to anticipate global market shifts and adapt quickly has kept STAR Labs at the forefront of the pharmaceutical world.
@@ -230,7 +230,7 @@
                                 <div class="image-overlay"></div>
                             </div>
                             <div class="team-member-info mt-35 mb-25">
-                                <h3><a href="#">Muhammad Iqbal <br>Malik</a></h3>
+                                <h3>Muhammad Iqbal <br>Malik</h3>
                                 <h6 class="f-500 text-up-case letter-spacing pink-color">Founder</h6>
                                 <p class="just-text">Muhammad Iqbal Malik’s journey in creating STAR Labs is a story of passion, resilience, and a deeply rooted belief in the power of science to transform lives. Over 60 years ago, he set out with a bold vision: to build a company that would not only lead the veterinary medicine industry in Pakistan but also make a meaningful impact on the lives of people and animals alike.
 <br>Starting from the ground up, Muhammad Iqbal Malik faced numerous challenges, yet his unwavering determination never faltered. With limited resources but endless resolve, he established STAR Labs as a symbol of quality, integrity, and trust. His vision went beyond simply manufacturing medicines—he sought to create solutions that would raise the standard of healthcare in Pakistan, improve outcomes, and bring hope to those in need.
@@ -250,7 +250,7 @@
                                 <div class="image-overlay"></div>
                             </div>
                             <div class="team-member-info mt-35 mb-25">
-                                <h3><a href="#">M. A. Hussain <br> Malik </a></h3>
+                                <h3>M. A. Hussain <br> Malik</h3>
                                 <h6 class="f-500 text-up-case letter-spacing pink-color">Managing Director</h6>
                                 <p class="just-text">
                                 M. A. Hussain Malik has been a driving force behind STAR Labs, with over 30 years of expertise in the pharmaceutical industry. As Managing Director, he plays a critical role in shaping the company’s strategic direction and operational excellence. His hands-on approach has led to the successful implementation of innovative processes that have significantly improved product quality and efficiency.

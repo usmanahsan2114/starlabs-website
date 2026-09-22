@@ -575,7 +575,7 @@
                             <p class="just-text">At Star Labs, we perceive internships as an exhilarating launchpad for aspiring innovators in the pharmaceutical realm! Our internship program is designed to immerse you in hands-on experiences that spark creativity and generate tangible impact. You will actively engage with our talented team on pivotal projects that align with our mission of enhancing global health. We foster a vibrant and inclusive atmosphere where learning is not only enriching but also enjoyable, and mentorship is integral—consider it your personal growth adventure! You’ll gain invaluable insights into the pharmaceutical industry while forging connections that can shape your future career. If you're ready to unleash your potential and make a meaningful difference, join us at Star Labs and embark on an exhilarating journey that will set you on the path to success!
 
                             </p>
-                            <a data-animation="fadeInLeft" data-delay=".6s" href="#"
+                            <a data-animation="fadeInLeft" data-delay=".6s" href="../contact/"
                                 class="btn btn-icon ml-0"><span>+</span>Contact Us</a>
                         </div>
                     </div>

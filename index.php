@@ -1120,7 +1120,7 @@
                                                 <p>Our human pharmaceutical products are designed to improve health and
                                                     quality of life.</p>
                                                 <ul class="product-list">
-                                                    <li><a href="products/human/oral-solid/"><i class="fas fa-capsules"></i> Oral Solids</a></li>
+                                                    <li><a href="products/human/oral-solids/"><i class="fas fa-capsules"></i> Oral Solids</a></li>
                                                     <li><a href="products/human/injectable/"><i class="fas fa-syringe"></i> Injectable / Parenteral</a></li>
                                                     <li><a href="products/human/oral-liquid/"><i class="fas fa-prescription-bottle"></i> Oral Liquid</a></li>
                                                     <li><a href="products/human/topical/"><i class="fas fa-laptop-medical"></i> Topical</a></li>
@@ -1871,7 +1871,7 @@
                                                 <p>Lorem ipsum dolor sit amet, consectet adipisicing elit, sed do
                                                     eiusmod tem.</p>
                                                 <div class="news-meta">
-                                                    <span><a href="#" class="news-tag">Medical</a></span>
+                                                    <span><a href="blog/" class="news-tag">Medical</a></span>
                                                 </div>
                                             </div>
                                         </div>
@@ -1888,7 +1888,7 @@
                                                 <p>Lorem ipsum dolor sit amet, consectet adipisicing elit, sed do
                                                     eiusmod tem.</p>
                                                 <div class="news-meta">
-                                                    <span><a href="#" class="news-tag">Medicine</a></span>
+                                                    <span><a href="blog/" class="news-tag">Medicine</a></span>
                                                 </div>
                                             </div>
                                         </div>
@@ -1905,7 +1905,7 @@
                                                 <p>Lorem ipsum dolor sit amet, consectet adipisicing elit, sed do
                                                     eiusmod tem.</p>
                                                 <div class="news-meta">
-                                                    <span><a href="#" class="news-tag">Health</a></span>
+                                                    <span><a href="blog/" class="news-tag">Health</a></span>
                                                 </div>
                                             </div>
                                         </div>

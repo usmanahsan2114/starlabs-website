@@ -538,3 +538,15 @@ new WOW().init();
 
 
 })(jQuery);
+
+// Graceful fallback for any image that fails to load across the site
+window.addEventListener('error', function (e) {
+	if (e.target && e.target.tagName && e.target.tagName.toLowerCase() === 'img') {
+		if (!e.target.dataset.fallbackApplied) {
+			e.target.dataset.fallbackApplied = 'true';
+			var isLocal = window.location.pathname.indexOf('/starlabs/') !== -1;
+			var prefix = isLocal ? '/starlabs/' : '/';
+			e.target.src = prefix + 'img/logo/logo.png';
+		}
+	}
+}, true);
