@@ -96,7 +96,7 @@ if (strpos($fl, 'inject') !== false || strpos($fl, 'infus') !== false) {
                         <?php endif; ?>
                         <div class="sl-faq__item">
                             <h3>Who manufactures <?php echo htmlspecialchars($pname); ?>?</h3>
-                            <p><?php echo htmlspecialchars($pname); ?> is manufactured by Star Laboratories (Pvt) Ltd, a WHO-GMP certified human and veterinary pharmaceutical manufacturer in Lahore, Pakistan, established in 1962.</p>
+                            <p><?php echo htmlspecialchars($pname); ?> is manufactured by Star Laboratories (Pvt) Ltd, a WHO-GMP certified human and veterinary pharmaceutical manufacturer in Lahore, Pakistan, established in 1960.</p>
                         </div>
                     </div>
                 </div>
